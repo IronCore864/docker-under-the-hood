@@ -1,0 +1,8 @@
+---
+- name: Copy umoci with owner and permissions
+  copy:
+    src: umoci
+    dest: /usr/local/bin/umoci
+    owner: vagrant
+    group: vagrant
+    mode: '0755'

@@ -1,0 +1,13 @@
+---
+- include: skopeo.yaml
+- include: umoci.yaml
+
+- name: Install tools.
+  package:
+    name: tree
+
+- name: Set PS1.
+  lineinfile:
+    path: /home/vagrant/.bashrc
+    regexp: '^export PS1'
+    line: 'export PS1="\[\033[38;5;45m\]\u\[$(tput sgr0)\]\[\033[38;5;208m\]@\[$(tput sgr0)\]\[\033[38;5;45m\]\h\[$(tput sgr0)\]\[\033[38;5;0m\] \[$(tput sgr0)\]\[\033[38;5;208m\]\w\[$(tput sgr0)\]\[\033[38;5;15m\] \[$(tput sgr0)\]\[\033[38;5;45m\]\\$\[$(tput sgr0)\]\[\033[38;5;15m\] \[$(tput sgr0)\]"'
